@@ -18,7 +18,7 @@ nav ul li{
     list-style-type: none;
 }
 .game-Container{
-    background-color: yellow;
+    /* background-color: yellow; */
     display: flex;
     justify-content: center;
     margin-top: 50px;
@@ -31,6 +31,34 @@ nav ul li{
 }
 
 
-.container div{
+.box{
     border: 2px solid black;
+    font-size: 8vw;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box:hover{
+    background-color: aqua;
+}
+
+.gameInfo{
+ margin: 40px;
+}
+
+.imgBox img{
+    display: none;
+}
+.bl-0{
+    border-left: 0;
+}
+.br-0{
+    border-right: 0;
+}
+.bt-0{
+    border-top: 0;
+}
+.bb-0{
+    border-bottom: 0;
 }
