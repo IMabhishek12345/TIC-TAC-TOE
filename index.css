@@ -48,8 +48,19 @@ nav ul li{
 }
 
 .imgBox img{
-    display: none;
+    width:0;
+    transition: width 1s ease-in-out;
 }
+.info{
+    font-size: 70px;
+}
+#reset{
+padding: 10px;
+margin: 10px 5vw; 
+background-color: rgb(239, 226, 251);
+cursor:pointer; 
+}
+
 .bl-0{
     border-left: 0;
 }

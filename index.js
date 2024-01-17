@@ -1,6 +1,8 @@
 console.log("Welcome to the game");
 let turn="x";
 let isgameOver=false;
+let info=document.querySelector(".info");   
+
 //function to check your turn
 const changeTurn=()=>{
     return turn==="0"?"x":"0";
@@ -9,7 +11,6 @@ const changeTurn=()=>{
 //function to checkwinner
 const checkWinner=()=>{
   let boxtext=document.getElementsByClassName("boxText");
-  let info=document.querySelector(".info");   
  
   let wins=[
     [0,1,2],
@@ -27,14 +28,14 @@ const checkWinner=()=>{
     // console.log(e);
     // console.log(e[0],e[1],e[2]);// will give the index of boxText
     // console.log(boxtext[e[0]]);
-
-    if(boxtext[e[0]].innerText===boxtext[e[1]].innerText && boxtext[e[1]].innerText===boxtext[e[2]].innerText && boxtext[e[0]].innerText!==""){
+   if(boxtext[e[0]].innerText===boxtext[e[1]].innerText && boxtext[e[1]].innerText===boxtext[e[2]].innerText && boxtext[e[0]].innerText!==""){
       info.innerHTML=boxtext[e[0]].innerText + " wins";
       isgameOver=true;
-      }
-
-  })
-   
+      document.querySelector(".imgBox").getElementsByTagName("img")[0].style.width="10vw";
+      //below command function same as above command
+      //document.getElementsByClassName("imgBox")[0].getElementsByTagName("img")[0].style.width="10vw";
+    }
+ })
 }
 
 let box=document.getElementsByClassName("box");
@@ -51,6 +52,17 @@ Array.from(box).forEach(element=>{
 
      checkWinner(); 
    }
- 
+})
+})
+
+//Add event listener to reset button
+let reset=document.getElementById("reset");
+reset.addEventListener("click",()=>{
+  let boxTexts=document.querySelectorAll(".boxText");
+  Array.from(boxTexts).forEach(e=>{
+    e.innerHTML="";
+    document.querySelector(".imgBox").getElementsByTagName("img")[0].style.width="0px";
+    info.innerHTML="";
   })
+  
 })
