@@ -73,3 +73,34 @@ cursor:pointer;
 .bb-0{
     border-bottom: 0;
 }
+
+@media screen and (max-width: 920px){
+
+.container {
+        display: grid;
+        grid-template-rows: repeat(3,21vw);
+        grid-template-columns: repeat(3,23vw);  
+    }
+h1{
+    font-size: 35px;
+    text-align: center;
+    margin: 10px;
+  }
+.game-Container {
+    display: flex;
+    flex-wrap: wrap;
+}
+.box{
+    font-size: 20vw;
+}
+/* .info{
+    margin: 0px 140px;
+} */
+#reset {
+    padding: 13px 60px;
+    margin: 10px 35vw;
+    background-color: rgb(239, 226, 251);
+    cursor: pointer;
+    font-size: 35px;
+}
+} 

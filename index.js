@@ -61,12 +61,12 @@ Array.from(box).forEach(element=>{
 //Add event listener to reset button
 let reset=document.getElementById("reset");
 reset.addEventListener("click",()=>{
-  location.reload();
-  //   let boxTexts=document.querySelectorAll(".boxText");
-//   Array.from(boxTexts).forEach(e=>{
-//     e.innerHTML="";
-//     document.querySelector(".imgBox").getElementsByTagName("img")[0].style.width="0px";
-//     info.innerHTML="";
-//   })
-//  location.reload();
+  
+    let boxTexts=document.querySelectorAll(".boxText");
+    Array.from(boxTexts).forEach(e=>{
+    e.innerHTML="";
+    document.querySelector(".imgBox").getElementsByTagName("img")[0].style.width="0px";
+    info.innerHTML="";
+  })
+ location.reload();
 })
