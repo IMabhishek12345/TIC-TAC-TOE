@@ -1,11 +1,11 @@
 console.log("Welcome to the game");
-let turn="x";
+let turn="0";
 let isgameOver=false;
 let info=document.querySelector(".info");   
 
 //function to check your turn
 const changeTurn=()=>{
-    return turn==="0"?"x":"0";
+        return turn==="0"?"X":"0";
 }
 
 //function to checkwinner
@@ -43,12 +43,15 @@ let box=document.getElementsByClassName("box");
 //it in array form
 
 Array.from(box).forEach(element=>{
-   let boxText=element.querySelector(".boxText");
   
-   element.addEventListener("click",()=>{
-   boxText.innerText=turn==="x"?"x":"0";
-   turn=changeTurn();
-   if (!isgameOver){
+  let boxText=element.querySelector(".boxText");
+  element.addEventListener("click",(e)=>{
+  if (boxText.innerHTML===""){
+    boxText.innerHTML=turn;
+    turn=changeTurn();
+  }
+  
+  if (!isgameOver){
 
      checkWinner(); 
    }
