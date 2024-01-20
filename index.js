@@ -31,7 +31,12 @@ const checkWinner=()=>{
    if(boxtext[e[0]].innerText===boxtext[e[1]].innerText && boxtext[e[1]].innerText===boxtext[e[2]].innerText && boxtext[e[0]].innerText!==""){
       info.innerHTML=boxtext[e[0]].innerText + " wins";
       isgameOver=true;
-      document.querySelector(".imgBox").getElementsByTagName("img")[0].style.width="10vw";
+      if (screen.availWidth>920){
+        document.querySelector(".imgBox").getElementsByTagName("img")[0].style.width="10vw";
+      }else{
+        document.querySelector(".imgBox").getElementsByTagName("img")[0].style.width="30vw";
+      }
+
       //below command function same as above command
       //document.getElementsByClassName("imgBox")[0].getElementsByTagName("img")[0].style.width="10vw";
     }
